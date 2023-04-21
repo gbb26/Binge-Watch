@@ -1,0 +1,94 @@
+.card {
+    text-align: center;
+    width: 350px;
+    min-height: 450px;
+    overflow: none none;
+    padding:1px;
+    margin: 15px;
+    background-color: #1f1d1d;
+}
+.card:hover{
+    background-color: #2c2929;
+}
+.summary {
+    text-align: justify;
+}
+
+.card>img {
+    height: 300px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width:788px) {
+    .card {
+        min-height: 450px;
+        width: 300px;
+
+    }
+
+    .card>img {
+        height: 290px
+    }
+}
+
+@media (max-width:688px) {
+    .card {
+        min-height: 400px;
+        width: 250px;
+    }
+
+    .card>img {
+        height: 2800px;
+    }
+}
+
+@media (max-width:588px) {
+    .card {
+        min-height: 350px;
+        width: 260px;
+
+    }
+
+    .card>img {
+        height: 220px;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width:570px) {
+    .card {
+        height: auto;
+        width: 95%;
+        margin: 5px;
+    }
+
+    .card>img {
+        height: 200px;
+    }
+}
+
+.NavLink>* {
+    text-decoration: none;
+
+}
+
+.link {
+    text-decoration: underline;
+    color: rgb(192, 192, 12);
+    font-size: 1.5rem;
+}
+
+.link:hover {
+    color: rgb(156, 156, 121);
+    text-decoration: none;
+}
+.badge{
+    position: absolute;
+    top: 40px;
+    right: -23px;
+    padding: 8px;
+    border: none;
+    background-color: rgb(182, 182, 64);
+    color: red;
+    font-size:xx-large;
+}
