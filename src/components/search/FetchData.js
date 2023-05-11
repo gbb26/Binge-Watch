@@ -1,39 +1,37 @@
-import React, {  useEffect,useState } from 'react'
+import React, { useState } from 'react'
 import Template from '../Template'
 import './fetchdata.css'
 import Loader from '../loader/Loader'
-const FetchData = () => {
+import Scroll from '../Scroll'
+const FetchData = (props) => {
   // STATES
-  const [movieName, setMovieName] = useState('tom and jerry')
+  const [movieName, setMovieName] = useState()
   const [data, setData] = useState([])
-  const [loader,setLoader] = useState(false)
+  const [loader, setLoader] = useState(true)
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(page)
   // METHOD BELOW WILL FETCH DATA FROM API
-  const getData = () => {
-  setLoader(true)
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '267604c5d4mshbb0f82c9db7bf45p157ea4jsnc27e9ce7152e',
-      'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-    }
-  };
-  
-  fetch(`https://streaming-availability.p.rapidapi.com/v2/search/title?title=${movieName}&country=us&show_type=all&output_language=en`, options)
-    .then(response => response.json())
-    .then((response) => {
-      // console.log(response)
-      setData(response.result)
-      setLoader(false)
-    })
-    .catch(err => console.error(err));
+  const getData = async () => {
+    setLoader(true)
+    const d = await fetch(`https://api.themoviedb.org/3/search/multi?query=${movieName}&include_adult=false&language=en-US&page=${page}&api_key=API_KEY`)
+    const da = await d.json()
+    setData(da.results)
+    setTotalPages(da.total_pages)
+    setLoader(false)
   }
-  // // useEffect
-  useEffect(() => {
+  const handleNext = () => {
+    setPage(page => page + 1)
     getData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }
+  // METHOD BELOW WILL FETCH DATA FROM PREVIOUS PAGE IF EXIST
+  const handlePrev = () => {
+    setPage(page => page - 1)
+    getData()
+  }
+
   // HANDLES FORM'S SUBMISSION
   const handleSubmit = (event) => {
+    setPage(1)
     event.preventDefault()
     getData()
   }
@@ -44,35 +42,52 @@ const FetchData = () => {
         className="form"
         onSubmit={handleSubmit}
         role="search">
-        <input 
-         id='item' type="search"
+        <input
+          id='item' type="search"
           placeholder="Search..."
-          value={movieName}
           aria-label="Search"
           onChange={(event) => {
             setMovieName(event.target.value)
           }}
         />
       </form>
-{
-      !loader?
-      
-      <div className='container-fluid d-flex flex-wrap justify-content-evenly ' >
-        {
-          data.map((items) => {
-            return <div key={items.tmdbId} className="card " >
-              <Template
-              src= {!items.posterURLs.original ? 'https://2.bp.blogspot.com/-X9sVvOD0hrs/W5cz8WKyknI/AAAAAAAAEKI/s6mNIUQdsy4KGnCgtF1VSZlnj237ArxawCLcBGAs/s1600/not%2Bfound.gif' : items.posterURLs.original}
-              year={items.year}
-              tagline={items.tagline?items.tagline:items.overview.slice(0,70)}
-              title={items.title ? items.title : ''}
-                ratings={items.imdbRating ? items.imdbRating/10 : 'UnRated'} />
+      {
+        loader ? <Loader /> :
+          <div>
+            <div className='container-fluid d-flex flex-wrap justify-content-evenly '>
+              {
+                data.map((items) => {
+                  return <div key={items.id} className="card " >
+                    {items.media_type === 'movie' ? <Template
+                      title={items.title ? items.title : ''}
+                      year={items.release_date}
+                      src={!items.poster_path ? 'https://2.bp.blogspot.com/-X9sVvOD0hrs/W5cz8WKyknI/AAAAAAAAEKI/s6mNIUQdsy4KGnCgtF1VSZlnj237ArxawCLcBGAs/s1600/not%2Bfound.gif' : `https://image.tmdb.org/t/p/w300${items.poster_path}`}
+                      ratings={items.vote_average ? items.vote_average.toFixed(1) : 'UnRated'}
+                      trailerLink={items.trailer}
+                    /> : <Template
+                      title={items.name ? items.name : ''}
+                      year={items.first_air_date}
+                      src={!items.poster_path ? 'https://2.bp.blogspot.com/-X9sVvOD0hrs/W5cz8WKyknI/AAAAAAAAEKI/s6mNIUQdsy4KGnCgtF1VSZlnj237ArxawCLcBGAs/s1600/not%2Bfound.gif' : `https://image.tmdb.org/t/p/w300${items.poster_path}`}
+                      ratings={items.vote_average ? items.vote_average.toFixed(1) : 'UnRated'}
+                      trailerLink={items.trailer}
+                    />}
+                  </div>
+                })
+              }
             </div>
-          })
-        }
-      </div>:<Loader/>
-}    
-</>
+            <div className='container-pagination' style={{display:data.length<1?'none':''}}>
+              <button className='btn btn-warning' onClick={handlePrev} disabled={page === 1 ? true : false} >
+                {'<< '}PREV
+              </button>
+              <span className='h4'>{page} of {totalPages}</span>
+              <button className='btn btn-warning' onClick={handleNext} disabled={page === totalPages ? true : false} >
+                NEXT{' >>'}
+              </button>
+            </div>
+            <Scroll />
+          </div>
+      }
+    </>
   )
 }
 

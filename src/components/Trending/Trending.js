@@ -11,7 +11,7 @@ function FetchTrending(props) {
   const [type,setType] = useState('all')
     const getData = async () =>{
         setLoader(true)
-        const d = await fetch(`https://api.themoviedb.org/3/trending/${type}/${'day'}?api_key=${process.env.REACT_APP_TRENDING_KEY}&page=${page}&genre=horror`)
+        const d = await fetch(`https://api.themoviedb.org/3/trending/${type}/${'day'}?api_key=${'API_KEY'}&page=${page}&genre=horror`)
         const da = await d.json()
         setData(da.results)
         console.log(da)
