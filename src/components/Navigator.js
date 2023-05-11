@@ -15,7 +15,7 @@ const Navigator = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav ms-auto">
         <li className="nav-item">
-         <Link to="/" className="nav-link">TOP-100</Link>
+         <Link to="/" className="nav-link">TOP RATED</Link>
         </li>
         <li className="nav-item">
          <Link to="/trending" className="nav-link">TRENDING</Link>

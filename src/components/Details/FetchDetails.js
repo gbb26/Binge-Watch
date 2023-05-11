@@ -23,7 +23,7 @@ const FetchDetails = (props) => {
   const [loader,setLoader] = useState(true)
   const getData = async () => {
     setLoader(true)
-    const d = await fetch(`https://www.omdbapi.com/?t=${state.t}&plot=full&apikey=${process.env.REACT_APP_DETAILS_KEY}`)
+    const d = await fetch(`https://www.omdbapi.com/?t=${state.t}&plot=full&apikey=${'API_KEY'}`)
     const data = await d.json();
     // console.log(data)
     setDetails({

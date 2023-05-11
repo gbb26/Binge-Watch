@@ -45,6 +45,7 @@
   font-size: 1.4rem;
   background-color: #222111;
   border-radius: 10px;
+  text-decoration: underline;
 }
 .navbar-collapse{
   text-align: center;
