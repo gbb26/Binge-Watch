@@ -4,5 +4,6 @@ body {
     scroll-behavior:smooth;
 }
 *{
+    transition:all 1s;
     scroll-behavior: smooth;
 }
