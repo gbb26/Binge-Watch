@@ -24,7 +24,7 @@ const FetchDetails = (props) => {
   const getData = async () => {
     setLoader(true);
     const d = await fetch(
-      `https://www.omdbapi.com/?t=${state.t}&plot=full&apikey=${""}`
+      `https://www.omdbapi.com/?t=${state.t}&plot=full&apikey=${"6364a5ae"}`
     );
     const data = await d.json();
     // console.log(data)

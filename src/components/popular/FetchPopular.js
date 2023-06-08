@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Template from "../Template";
 import Loader from "../loader/Loader";
 import Scroll from "../Scroll";
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 
 const FetchPopular = (props) => {
   const [data, setData] = useState([]);
@@ -12,7 +12,7 @@ const FetchPopular = (props) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "267604c5d4mshbb0f82c9db7bf45p157ea4jsnc27e9ce7152e",
         "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
       },
     };

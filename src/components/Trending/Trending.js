@@ -13,21 +13,21 @@ function FetchTrending(props) {
   const getData = async () => {
     setLoader(true);
     const d = await fetch(
-      `https://api.themoviedb.org/3/trending/${type}/${"day"}?api_key=""&page=${page}`
+      `https://api.themoviedb.org/3/trending/${type}/${"day"}?api_key=3ee131ef79e7c59cc325ba92a9b42da3&page=${page}`
     );
     const da = await d.json();
     setData(da.results);
-    setTotalPages(da.total_pages);
+    setTotalPages(400);
     setLoader(false);
   };
   // METHOD BELOW WILL FETCH DATA FROM NEXT PAGE IF EXIST
   const handleNext = () => {
-    setPage((page) => page - 1);
+    setPage(page + 1);
     getData();
   };
   // METHOD BELOW WILL FETCH DATA FROM PREVIOUS PAGE IF EXIST
   const handlePrev = () => {
-    setPage((page) => page - 1);
+    setPage(page - 1);
     getData();
   };
   useEffect(() => {
@@ -60,7 +60,6 @@ function FetchTrending(props) {
           >
             MOVIES
           </button>
-
           <button
             className="btn toggles"
             onClick={() => {

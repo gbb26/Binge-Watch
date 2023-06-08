@@ -12,7 +12,7 @@ const FetchData = (props) => {
   const getData = async () => {
     setLoader(true);
     const d = await fetch(
-      `https://api.themoviedb.org/3/search/multi?query=${movieName}&include_adult=false&language=en-US&page=${1}&api_key=YOUR-API-KEY`
+      `https://api.themoviedb.org/3/search/multi?query=${movieName}&include_adult=false&language=en-US&page=${1}&api_key=3ee131ef79e7c59cc325ba92a9b42da3`
     );
     const da = await d.json();
     setData(da.results);
