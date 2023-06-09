@@ -12,7 +12,7 @@ const FetchPopular = (props) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
       },
     };
