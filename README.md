@@ -1,1 +1,1 @@
-### https://cozy-faloodeh-83ebf4.netlify.app/
+### Introducing CineVerse– your gateway to cinematic wonders. Explore IMDb's top 100 evergreen movies, today's trending films, and web series. Discover similar titles, all in a sleek React-powered app featuring hooks, pagination, dark theme.
