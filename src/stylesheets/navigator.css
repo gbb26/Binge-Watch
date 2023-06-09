@@ -3,6 +3,7 @@
 .navbar-scroll .navbar-brand {
   color: #fff;
 }
+
 /* Color of the navbar BEFORE scroll */
 .navbar-scroll {
   /* background-color: rgb(192, 192, 12); */
@@ -26,6 +27,7 @@
   padding-top: auto;
   padding-bottom: auto;
 }
+
 .navbar-brand {
   margin-left: -40px;
   color: #fff;
@@ -37,22 +39,25 @@
   /* letter-spacing: 5px;
   font-size: 2rem; */
 }
-.nav-link{
+
+.nav-link {
   font-size: 1.2rem;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   color: yellow;
   font-size: 1.4rem;
   background-color: #222111;
   border-radius: 10px;
   text-decoration: underline;
 }
-.navbar-collapse{
+
+.navbar-collapse {
   text-align: center;
 }
-@media (max-width:768px)
-{
-  .navbar-brand{
+
+@media (max-width:768px) {
+  .navbar-brand {
     margin-left: 0px;
   }
 }
