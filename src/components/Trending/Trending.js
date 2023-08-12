@@ -13,7 +13,7 @@ function FetchTrending(props) {
   const getData = async () => {
     setLoader(true);
     const d = await fetch(
-      `https://api.themoviedb.org/3/trending/${type}/${"day"}?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+      `https://api.themoviedb.org/3/trending/${type}/${"day"}?api_key=${'your-api-key'}&page=${page}`
     );
     const da = await d.json();
     setData(da.results);
