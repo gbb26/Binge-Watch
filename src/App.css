@@ -1,0 +1,226 @@
+/* Menu Styling */
+.menu-icon:hover {
+    color: rgb(221, 221, 27) !important;
+    transition: all 300ms;
+    transform: scale(0.97);
+}
+
+.loader {
+    margin-left: 50%;
+    transform: translate(-40px);
+}
+
+.menu-icon-background {
+    height: 30px;
+    width: 30px;
+    transition: all 300ms;
+    background-image: url('/100.svg') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu-icon-background:hover {
+    height: 30px;
+    width: 30px;
+    background-image: url('/100-yellow.svg') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(0.95);
+}
+
+.mobile-menu {
+    position: fixed !important;
+    left: 0 !important;
+    padding-top: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+.mobile-menu:hover {
+    cursor: pointer;
+}
+
+/* Homepage Styling */
+.homepage {
+    margin: 30px 20px 30px 90px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: space-between;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    text-transform: capitalize;
+    gap: 22px;
+}
+
+.homepage-section {
+    width: 100%;
+    height: auto;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
+.homepage-section>.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+}
+
+.homepage-section>.heading>h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.see-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 50px;
+    transition: all 400ms;
+}
+
+.see-all:hover {
+    background-color: #1a1a1a;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.category-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.toggles {
+    color: ghostwhite;
+    background-color: #151514;
+    font-size: 1.1rem;
+    margin-top: 0px;
+    margin: 0px 4px;
+    border-radius: 30px;
+    height: 50px;
+    width: 120px;
+    transition: all 400ms;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggles:hover {
+    border-bottom: 1px solid #fff;
+    background-color: #2e2e2c;
+    transform: scale(0.94);
+}
+
+.toggles:active {
+    border-bottom: 1px solid #fff;
+}
+
+.toggles:disabled {
+    background-color: #555555;
+    color: #fff;
+}
+
+.homepage,
+.trending-container {
+    margin: 30px 20px 30px 90px;
+}
+
+.details-container {
+    margin: 0px 0px 0px 80px;
+    width: calc(100vw - 80px);
+    height: 100vh;
+}
+
+.toggle-buttons-container {
+    height: auto;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.genre-button {
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    transition: all 400ms;
+    border: none;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.genre-button:hover {
+    transform: scale(0.91);
+}
+
+#input {
+    width: 300px;
+    height: 50px;
+    padding: 10px 0px 10px 20px;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+    border: none;
+    box-shadow: none;
+    font-size: 1.1em;
+}
+
+#input:focus {
+    opacity: 1;
+    border: 1px solid grey;
+    cursor: text;
+    letter-spacing: 2.4px;
+    width: 340px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .mobile-menu {
+        position: fixed !important;
+        top: 0 !important;
+        padding-top: 0px !important;
+        width: 100% !important;
+        height: 70px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+    }
+
+    .homepage,
+    .trending-container {
+        margin: 90px 8px 20px 8px;
+    }
+
+    .details-container {
+        margin: 0px 0px 0px 80px;
+        height: calc(100vh - 80px);
+        width: 100vw;
+    }
+}
