@@ -1,4 +1,3 @@
-const apiKey = '3ee131ef79e7c59cc325ba92a9b42da3';
 export const fetchTopRated = async (type, pageNumber) => {
     try {
         const resp = await fetch(
