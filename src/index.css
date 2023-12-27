@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+*::selection{
+    background-color: rgb(214, 247, 247);
+    color: #611f1f;
+}
+body {
+    background-color: #050505;
+    color: #e9e5e5;
+    width: 100%;
+    height: auto;
+}
