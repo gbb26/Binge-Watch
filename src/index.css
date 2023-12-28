@@ -5,10 +5,12 @@
     font-family: 'Fira Sans', sans-serif;
     scroll-behavior: smooth;
 }
-*::selection{
+
+*::selection {
     background-color: rgb(214, 247, 247);
     color: #611f1f;
 }
+
 body {
     background-color: #050505;
     color: #e9e5e5;
