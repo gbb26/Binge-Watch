@@ -1,39 +1,54 @@
+// Top Rated Data
 export const fetchTopRated = async (type, pageNumber) => {
     try {
         const resp = await fetch(
-            `https://api.themoviedb.org/3/${type}/top_rated?include_adult=false&api_key=${apiKey}&page=${pageNumber}`
+            `https://api.themoviedb.org/3/${type}/top_rated?include_adult=false&api_key=${import.meta.env.VITE_TMDB_API_KEY}&page=${pageNumber}`
         );
         const data = await resp.json();
         return data;
     } catch (error) {
-        console.error(`Error fetching top-rated movies: ${error.message}`);
+        console.error(`Error fetching top-rated movies:`);
         throw error;
     }
 };
+// Trending Data
 export const fetchTrending = async (type, timeLine, pageNumber) => {
     try {
         const resp = await fetch(
-            `https://api.themoviedb.org/3/trending/${type}/${timeLine}?api_key=${apiKey}&page=${pageNumber}`
+            `https://api.themoviedb.org/3/trending/${type}/${timeLine}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&page=${pageNumber}`
         );
         const data = await resp.json();
         return data;
     } catch (error) {
-        console.error(`Error fetching top-rated movies: ${error.message}`);
+        console.error(`Error fetching trending movies:`);
         throw error;
     }
 };
 export const searchMovie = async (movieName, pageNumber) => {
     try {
         const resp = await fetch(
-            `https://api.themoviedb.org/3/search/multi?query=${movieName}&include_adult=false&language=en-US&page=${pageNumber}&api_key=${apiKey}`
+            `https://api.themoviedb.org/3/search/multi?query=${movieName}&include_adult=false&language=en-US&page=${pageNumber}&api_key=${import.meta.env.VITE_TMDB_API_KEY}`
         );
         const data = await resp.json();
         return data;
     } catch (error) {
-        console.error(`Error fetching top-rated movies: ${error.message}`);
+        console.error(`Error fetching in searching movie:`);
         throw error;
     }
 };
+export const getDetails = async (type, ID) => {
+    try {
+        const resp = await fetch(
+            `https://api.themoviedb.org/3/${type ? type : "movie"}/${ID ? ID : 228}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
+        );
+        const data = await resp.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching movie Details:`);
+        throw error;
+    }
+};
+
 
 
 

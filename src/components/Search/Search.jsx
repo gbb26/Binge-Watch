@@ -3,6 +3,7 @@ import { searchMovie } from "../../api";
 import MovieCard from "../Cards/MovieCard";
 import Loader from "../Loaders/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [searchedResults, setSearchedResults] = useState({
@@ -27,7 +28,6 @@ const Search = () => {
   useEffect(() => {
     const searchMovieData = async () => {
       const response = await searchMovie(movieName, page);
-      console.log(response);
       if (page !== 1) {
         setSearchedResults((prevMovies) => ({
           results: [...prevMovies.results, ...response.results],
@@ -76,37 +76,49 @@ const Search = () => {
               return (
                 <div key={(index + 1) * page} className="card ">
                   {items.media_type === "movie" ? (
-                    <MovieCard
-                      movieName={items.title ? items.title : ""}
-                      releaseYear={items.release_date}
-                      posterUrl={
-                        !items.poster_path
-                          ? ""
-                          : `https://image.tmdb.org/t/p/w300${items.poster_path}`
-                      }
-                      imdbRating={
-                        items.vote_average
-                          ? items.vote_average.toFixed(1)
-                          : "UnRated"
-                      }
-                      homepageCard={false}
-                    />
+                    <Link
+                      to="/movie-details"
+                      state={items.id}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <MovieCard
+                        movieName={items.title ? items.title : ""}
+                        releaseYear={items.release_date}
+                        posterUrl={
+                          !items.poster_path
+                            ? ""
+                            : `https://image.tmdb.org/t/p/w300${items.poster_path}`
+                        }
+                        imdbRating={
+                          items.vote_average
+                            ? items.vote_average.toFixed(1)
+                            : "UnRated"
+                        }
+                        homepageCard={false}
+                      />
+                    </Link>
                   ) : (
-                    <MovieCard
-                      movieName={items.name ? items.name : ""}
-                      releaseYear={items.first_air_date}
-                      posterUrl={
-                        !items.poster_path
-                          ? "https://2.bp.blogspot.com/-X9sVvOD0hrs/W5cz8WKyknI/AAAAAAAAEKI/s6mNIUQdsy4KGnCgtF1VSZlnj237ArxawCLcBGAs/s1600/not%2Bfound.gif"
-                          : `https://image.tmdb.org/t/p/w300${items.poster_path}`
-                      }
-                      imdbRating={
-                        items.vote_average
-                          ? items.vote_average.toFixed(1)
-                          : "UnRated"
-                      }
-                      homepageCard={false}
-                    />
+                    <Link
+                      to="/tv-details"
+                      state={items.id}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <MovieCard
+                        movieName={items.name ? items.name : ""}
+                        releaseYear={items.first_air_date}
+                        posterUrl={
+                          !items.poster_path
+                            ? "https://2.bp.blogspot.com/-X9sVvOD0hrs/W5cz8WKyknI/AAAAAAAAEKI/s6mNIUQdsy4KGnCgtF1VSZlnj237ArxawCLcBGAs/s1600/not%2Bfound.gif"
+                            : `https://image.tmdb.org/t/p/w300${items.poster_path}`
+                        }
+                        imdbRating={
+                          items.vote_average
+                            ? items.vote_average.toFixed(1)
+                            : "UnRated"
+                        }
+                        homepageCard={false}
+                      />
+                    </Link>
                   )}
                 </div>
               );

@@ -1,0 +1,59 @@
+.details-card {
+    background-color: #10100e;
+    color: yellow;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-family: 'Arvo', serif;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+.strong-text {
+    font-size: 1.05em;
+    letter-spacing: 2px;
+}
+
+.details-card img {
+    width: 100%;
+    min-width: 330px;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+
+.movie-heading {
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.details-card div {
+    margin-bottom: 10px;
+}
+
+.details-card strong {
+    font-weight: bold;
+}
+
+.details-card span {
+    margin-right: 5px;
+}
+
+.details-card p {
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .details-card {
+        padding: 15px;
+    }
+
+    .details-card h2 {
+        font-size: 1.5em;
+    }
+}

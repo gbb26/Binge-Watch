@@ -55,6 +55,14 @@
   width: 390px;
 }
 
+.imdb-rating {
+  color: #fff;
+}
+
+.imdb-rating:hover {
+  color: yellow;
+}
+
 @media screen and (max-width:526px) {
   .movie-card {
     width: 96%;

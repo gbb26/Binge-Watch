@@ -37,17 +37,26 @@ const Homepage = () => {
             trendingDay.slice(0, 5).map((movie, index) => {
               return (
                 <span key={index}>
-                  <MovieCard
-                    posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                    movieName={movie.title ? movie.title : movie.original_title}
-                    releaseYear={movie.release_date}
-                    imdbRating={
-                      movie.vote_average
-                        ? movie.vote_average.toFixed(1)
-                        : "UnRated"
-                    }
-                    homepageCard={true}
-                  />
+                  <Link
+                    to="/movie-details"
+                    state={movie.id}
+                    className="movie-details-link"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <MovieCard
+                      posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                      movieName={
+                        movie.title ? movie.title : movie.original_title
+                      }
+                      releaseYear={movie.release_date}
+                      imdbRating={
+                        movie.vote_average
+                          ? movie.vote_average.toFixed(1)
+                          : "UnRated"
+                      }
+                      homepageCard={true}
+                    />
+                  </Link>
                 </span>
               );
             })}
@@ -65,17 +74,24 @@ const Homepage = () => {
           {trendingWeek.slice(0, 5).map((movie, index) => {
             return (
               <span key={index}>
-                <MovieCard
-                  posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                  movieName={movie.title ? movie.title : movie.original_title}
-                  releaseYear={movie.release_date}
-                  imdbRating={
-                    movie.vote_average
-                      ? movie.vote_average.toFixed(1)
-                      : "UnRated"
-                  }
-                  homepageCard={true}
-                />
+                <Link
+                  to="/movie-details"
+                  state={movie.id}
+                  className="movie-details-link"
+                  style={{ textDecoration: "none" }}
+                >
+                  <MovieCard
+                    posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                    movieName={movie.title ? movie.title : movie.original_title}
+                    releaseYear={movie.release_date}
+                    imdbRating={
+                      movie.vote_average
+                        ? movie.vote_average.toFixed(1)
+                        : "UnRated"
+                    }
+                    homepageCard={true}
+                  />
+                </Link>
               </span>
             );
           })}
@@ -93,17 +109,24 @@ const Homepage = () => {
           {topRated.slice(0, 5).map((movie, index) => {
             return (
               <span key={index}>
-                <MovieCard
-                  posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                  movieName={movie.title ? movie.title : movie.original_title}
-                  releaseYear={movie.release_date}
-                  imdbRating={
-                    movie.vote_average
-                      ? movie.vote_average.toFixed(1)
-                      : "UnRated"
-                  }
-                  homepageCard={true}
-                />
+                <Link
+                  to="/movie-details"
+                  state={movie.id}
+                  className="movie-details-link"
+                  style={{ textDecoration: "none" }}
+                >
+                  <MovieCard
+                    posterUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                    movieName={movie.title ? movie.title : movie.original_title}
+                    releaseYear={movie.release_date}
+                    imdbRating={
+                      movie.vote_average
+                        ? movie.vote_average.toFixed(1)
+                        : "UnRated"
+                    }
+                    homepageCard={true}
+                  />
+                </Link>
               </span>
             );
           })}

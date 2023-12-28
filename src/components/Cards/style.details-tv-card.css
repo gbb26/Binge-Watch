@@ -1,0 +1,74 @@
+/* style.details-tv-card.css */
+
+.details-tv-container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Arvo', serif;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+
+.details-tv-card {
+    color: yellow;
+    background-color: #10100e;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.details-tv-card img {
+    width: 100%;
+    min-width: 330px;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+.movie-heading {
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.details-tv-card div {
+    margin-bottom: 10px;
+}
+
+.details-tv-card strong {
+    font-weight: 600;
+}
+
+.details-tv-card span {
+    margin-right: 5px;
+}
+
+.details-tv-card p {
+    margin-bottom: 10px;
+}
+
+.seasons-info {
+    margin-top: 40px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+/* Add spacing between each season */
+.details-tv-card .season {
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .details-tv-card {
+        padding: 15px;
+    }
+
+    .details-tv-card h2 {
+        font-size: 1.5em;
+    }
+}
