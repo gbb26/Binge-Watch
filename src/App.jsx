@@ -7,6 +7,7 @@ import Trending from "./components/Trending/Trending";
 import TopRated from "./components/TopRated/TopRated";
 import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
+import Recommended from "./components/Recommended/Recommended";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/search" element={<Search />} />
         <Route exact path="/movie-details" element={<Details type="movie" />} />
         <Route exact path="/tv-details" element={<Details type="tv" />} />
+        <Route exact path="/recommended" element={<Recommended />} />
       </Routes>
     </div>
   );

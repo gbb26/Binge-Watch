@@ -216,6 +216,7 @@
     .homepage,
     .trending-container {
         margin: 90px 8px 20px 8px;
+        height: auto;
     }
 
 

@@ -5,6 +5,8 @@
     justify-content: center;
     font-family: 'Arvo', serif;
     font-family: 'Fira Sans', sans-serif;
+    border-bottom: 1px solid #fff;
+    border-radius: 10px;
 }
 
 
@@ -21,9 +23,9 @@
 }
 
 .details-tv-card img {
-    width: 100%;
+    width: 90%;
     min-width: 330px;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/7.7;
     border-radius: 10px;
 }
 

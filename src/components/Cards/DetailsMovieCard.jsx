@@ -20,9 +20,10 @@ const DetailsMovieCard = ({ movieDetails }) => {
     vote_count,
   } = movieDetails ? movieDetails : "";
   return (
-    <div className="trending-container details-movie-container">
+    <div className="details-movie-container">
       <div className="details-card">
         <img
+          loading="lazy"
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
           alt={title}
         />
