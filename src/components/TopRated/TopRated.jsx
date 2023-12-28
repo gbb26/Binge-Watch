@@ -72,6 +72,7 @@ function TopRated() {
         hasMore={page < topRatedMovies.total_pages} // Set to true if there's more data to fetch
         loader={<Loader />}
       >
+        {/* ---------------- */}
         <div className="category-cards">
           {topRatedMovies.results &&
             topRatedMovies.results.map((items, index) => {
@@ -126,6 +127,7 @@ function TopRated() {
               );
             })}
         </div>
+        {/* --------------------- */}
       </InfiniteScroll>
     </div>
   );

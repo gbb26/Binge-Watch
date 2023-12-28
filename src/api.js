@@ -48,6 +48,19 @@ export const getDetails = async (type, ID) => {
         throw error;
     }
 };
+export const getRecommended = async (type, ID) => {
+    try {
+        const resp = await fetch(
+            `https://api.themoviedb.org/3/${type}/${ID}/recommendations?api_key=${import.meta.env.VITE_TMDB_API_KEY}&page=1`
+        );
+        const data = await resp.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching recommended movies:`);
+        throw error;
+    }
+};
+
 
 
 
