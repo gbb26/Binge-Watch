@@ -1,4 +1,5 @@
 const apiKey = '3ee131ef79e7c59cc325ba92a9b42da3';
+// Top Rated Data
 export const fetchTopRated = async (type, pageNumber) => {
     try {
         const resp = await fetch(
@@ -11,6 +12,7 @@ export const fetchTopRated = async (type, pageNumber) => {
         throw error;
     }
 };
+// Trending Data
 export const fetchTrending = async (type, timeLine, pageNumber) => {
     try {
         const resp = await fetch(
@@ -35,6 +37,7 @@ export const searchMovie = async (movieName, pageNumber) => {
         throw error;
     }
 };
+
 
 
 
