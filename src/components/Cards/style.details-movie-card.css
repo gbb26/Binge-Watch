@@ -1,6 +1,6 @@
 .details-card {
     background-color: #10100e;
-    color: #fff;
+    color: yellow;
     padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -8,7 +8,14 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    font-family: 'Arvo', serif;
+    font-family: 'Fira Sans', sans-serif;
 
+}
+
+.strong-text {
+    font-size: 1.05em;
+    letter-spacing: 2px;
 }
 
 .details-card img {

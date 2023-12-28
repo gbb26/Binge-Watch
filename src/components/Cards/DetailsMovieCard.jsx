@@ -18,10 +18,9 @@ const DetailsMovieCard = ({ movieDetails }) => {
     title,
     vote_average,
     vote_count,
-  } = movieDetails;
-
+  } = movieDetails ? movieDetails : "";
   return (
-    <div className="trending-container">
+    <div className="trending-container details-movie-container">
       <div className="details-card">
         <img
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
@@ -33,51 +32,56 @@ const DetailsMovieCard = ({ movieDetails }) => {
           <p>{overview}</p>
 
           <div>
-            <strong>Genres:</strong>{" "}
-            {genres.map((genre) => (
-              <span key={genre.id}>{genre.name} </span>
-            ))}
+            <strong className="strong-text">Genres:</strong>{" "}
+            {genres &&
+              genres.map((genre) => <span key={genre.id}>{genre.name} </span>)}
           </div>
 
           <div>
-            <strong>Production Companies:</strong>{" "}
-            {production_companies.map((company) => (
-              <span key={company.id}>{company.name} </span>
-            ))}
+            <strong className="strong-text">Production Companies:</strong>{" "}
+            {production_companies &&
+              production_companies.map((company) => (
+                <span key={company.id}>{company.name} </span>
+              ))}
           </div>
 
           <div>
-            <strong>Production Countries:</strong>{" "}
-            {production_countries.map((country) => (
-              <span key={country.iso_3166_1}>{country.name} </span>
-            ))}
+            <strong className="strong-text">Production Countries:</strong>{" "}
+            {production_countries &&
+              production_countries.map((country) => (
+                <span key={country.iso_3166_1}>{country.name} </span>
+              ))}
           </div>
 
           <div>
-            <strong>Spoken Languages:</strong>{" "}
-            {spoken_languages.map((language) => (
-              <span key={language.iso_639_1}>{language.name} </span>
-            ))}
+            <strong className="strong-text">Spoken Languages:</strong>{" "}
+            {spoken_languages &&
+              spoken_languages.map((language) => (
+                <span key={language.iso_639_1}>{language.name} </span>
+              ))}
           </div>
 
           <p>
-            <strong>Release Date:</strong> {formatDate(release_date)}
+            <strong className="strong-text">Release Date:</strong>{" "}
+            {release_date && formatDate(release_date)}
           </p>
 
           <p>
-            <strong>Runtime:</strong> {runtime} minutes
+            <strong className="strong-text">Runtime:</strong> {runtime} minutes
           </p>
 
           <p>
-            <strong>Vote Average:</strong> {vote_average} ({vote_count} votes)
+            <strong className="strong-text">Vote Average:</strong>{" "}
+            {vote_average} ({vote_count} votes)
           </p>
 
           <p>
-            <strong>Revenue:</strong> ${revenue.toLocaleString()}
+            <strong className="strong-text">Revenue:</strong> $
+            {revenue && revenue.toLocaleString()}
           </p>
 
           <p>
-            <strong>Status:</strong> {status}
+            <strong className="strong-text">Status:</strong> {status}
           </p>
         </div>
       </div>

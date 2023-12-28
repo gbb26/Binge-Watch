@@ -3,12 +3,14 @@
 .details-tv-container {
     display: flex;
     justify-content: center;
+    font-family: 'Arvo', serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
 .details-tv-card {
+    color: yellow;
     background-color: #10100e;
-    color: #fff;
     padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -35,7 +37,7 @@
 }
 
 .details-tv-card strong {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .details-tv-card span {
