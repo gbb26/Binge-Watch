@@ -73,4 +73,13 @@ hr {
     .details-tv-card h2 {
         font-size: 1.5em;
     }
+
+    .details-tv-card img {
+        aspect-ratio: 16/14;
+    }
+
+    .details-tv-card .season {
+        margin-bottom: 20px;
+        line-height: normal;
+    }
 }
