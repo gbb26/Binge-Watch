@@ -13,7 +13,6 @@ const Recommended = ({ ID, type }) => {
   useEffect(() => {
     const fetchRecommended = async () => {
       const response = await getRecommended(type, ID);
-      console.log(response);
       setRecommended({
         results: [...response.results],
         total_results: response.total_results,
