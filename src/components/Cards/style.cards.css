@@ -67,14 +67,10 @@
 @media screen and (max-width:526px) {
 
   .movie-card {
-    width: 200px;
+    width: 300px;
   }
 
   .homepage-movie-card {
-    width: 200px;
-  }
-
-  .movie-poster {
-    height: 200px;
+    width: 330px;
   }
 }
