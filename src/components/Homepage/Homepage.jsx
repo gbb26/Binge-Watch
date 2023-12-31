@@ -32,7 +32,7 @@ const Homepage = () => {
             see all
           </Link>
         </div>
-        <div className="category-cards">
+        <div className="homepage-category-cards">
           {trendingDay &&
             trendingDay.slice(0, 5).map((movie, index) => {
               return (
@@ -70,7 +70,7 @@ const Homepage = () => {
             see all
           </Link>
         </div>
-        <div className="category-cards">
+        <div className="homepage-category-cards">
           {trendingWeek.slice(0, 5).map((movie, index) => {
             return (
               <span key={index}>
@@ -105,7 +105,7 @@ const Homepage = () => {
             see all
           </Link>
         </div>
-        <div className="category-cards">
+        <div className="homepage-category-cards">
           {topRated.slice(0, 5).map((movie, index) => {
             return (
               <span key={index}>
